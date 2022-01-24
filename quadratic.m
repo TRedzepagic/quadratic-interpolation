@@ -18,12 +18,12 @@ function quadratic_interpolation(f, x1, x2, x3, tol)
         cond = true;
         iterations = 1;
         while(cond)
-            % Quadratic interpolation in the form of a second-order polynomial y(x) = a + bx + cx^2
-            % a, b, c is calculated from the following linear equations
             syms a b c
             fx1 = f(x1);
             fx2 = f(x2);
             fx3 = f(x3);
+            % Quadratic interpolation in the form of a second-order polynomial y(x) = a + bx + cx^2
+            % a, b, c is calculated from the following linear equations
             eq1 = a + x1*b + x1^2 * c == fx1;
             eq2 = a + x2*b + x2^2 * c == fx2;
             eq3 = a + x3*b + x3^2 * c == fx3;
